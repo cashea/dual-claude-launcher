@@ -67,6 +67,8 @@ This will:
 .\scripts\sync-config.ps1
 ```
 
+Copies Instance 1's `mcpServers` to Instance 2, renaming `desktop-commander` to `desktop-commander-2`. Instance 2 `preferences` are kept and the previous config is backed up.
+
 ## MCP Config
 
 Each instance has its own template so it only loads its own Desktop Commander server:
@@ -108,6 +110,7 @@ dual-claude-launcher/
 │   ├── claude_desktop_config.instance1.json  # Instance 1 MCP config template
 │   └── claude_desktop_config.instance2.json  # Instance 2 MCP config template
 └── scripts/
+    ├── common.ps1                    # Shared helpers (dot-sourced)
     ├── setup.ps1                     # First-time setup
     ├── sync-shortcuts.ps1            # Fix shortcuts after Claude update
     └── sync-config.ps1              # Push config changes to Instance 2
@@ -130,6 +133,7 @@ dual-claude-launcher/
 │   ├── claude_desktop_config.instance1.json  # Instance 1 MCP config template
 │   └── claude_desktop_config.instance2.json  # Instance 2 MCP config template
 └── scripts/
+    ├── common.ps1                    # Shared helpers (dot-sourced)
     ├── setup.ps1                     # First-time setup
     ├── sync-shortcuts.ps1            # Fix shortcuts after Claude update
     └── sync-config.ps1              # Push config changes to Instance 2
